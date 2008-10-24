@@ -1,0 +1,167 @@
+Luciano Ramalho - Biblioteconomia Noturno - N.USP. 1002101
+
+.. contents:: Sumário
+
+
+------------------
+Introdução
+------------------
+
+O projeto Circulante.org visa a construção de um site onde as pessoas possam colocar seus livros à disposição de seus amigos com a segurança de um sistema de controle de empréstimos parecido com o de uma biblioteca. 
+
+Trata-se, portanto, de uma iniciativa para maximizar o uso de recursos rivais com capacidade ociosa, como outras iniciativas estudadas por Benkler em seu artigo `Sharing Nicely`__ : `On shareable goods and the emergence of sharing as a modality of economic production`. 
+
+__ http://www.benkler.org/SharingNicely.html
+
+Neste trabalho buscaremos analizar e aprimorar a proposta do Circulante.org a partir do arcabouço teórico construído em `Sharing Nicely`.
+
+Um segundo esforço será verificar até que ponto o aprofundamento teórico em `The Wealth of Networks`__ [WoN] é relevante para o compartilhamento de bens rivais. 
+
+__ http://cyber.law.harvard.edu/wealth_of_networks/Main_Page
+
+Em [WoN] a tecnologia tem um papel preponderante para viabilizar a produção social. Acima da infra-estrutura essencial da Internet, o software livre precisa do Git assim como a Wikipedia precisa do Mediawiki. Em comunidades tão grandes e dispersas quanto as destes dois projetos, apenas controles sociais provavelmente não seriam suficientes para minimizar os efeitos de ações deletérias, acidentais ou intencionais. O Git e o Mediawiki implementam  salvaguardas que tornam a colaboração viável mesmo em larga escala.
+
+De que maneira esta discussão sobre tecnologias que viabilizam a produção social pode ajudar na formulação de uma solução tecnológica para o incrementar o compartilhamento das nossas bibliotecas pessoais?
+
+----------------------------------
+Livros como bens compartilháveis
+----------------------------------
+
+O matemático e bibliotecário S. R. Ranganathan procurou definir rigorosamente a missão da biblioteconomia e formulou suas `Cinco Leis da Biblioteconomia`__. A primeira diz: `Os livros são para serem usados`. 
+
+__ http://pt.wikipedia.org/wiki/Leis_de_Ranganathan
+
+O livro, como suporte físico, é um bem rival: enquanto eu leio, você não pode ler (a menos que eu leia em voz alta; quando se procura por "book sharing" no Google atualmente, a maioria dos links nas primeiras páginas de resultados se refere à prática de ler em voz alta).
+
+Mas pela sua durabilidade, o livro tem uma capacidade excedente significativa. 
+
+    Cada exemplar é um bem rival (ainda que relativamente durável: poderá ser usado consecutivamente por várias pessoas). {`Imre Simon e Miguel Said Vieira, O rossio não-rival`__}
+
+__ http://www.ime.usp.br/~is/papir/RNR_v9.pdf
+
+Entre os parênteses de Simon e Vieira está o ponto de partida deste trabalho. A sociedade reconhece o valor do livro, bem como sua capacidade ociosa. Os dois mecanismos mais estudados de organização produtiva, o mercado e o estado, já estão a serviço da Primeira Lei de Ranganathan permitindo que esta capacidade ociosa seja melhor aproveitada. Em qualquer parte do mundo onde existem livros existe também um importante mercado secundário de livros usados. E ao investir em educação, o estado moderno investe também em bibliotecas, sejam elas escolares ou públicas.
+
+    Books (rather than their content) are an excellent example {of shareable goods}. In order to read a book one can borrow it from a library or buy it. Once purchased, the book has much more capacity to deliver its primary functionality — communicating its content—than a single nonobsessive individual can consume. {`Sharing Nicely`, III.D. Shareable Goods: Conclusion p. 305}
+
+O rossio dos livros
+---------------------
+
+Benkler estuda uma terceira forma de organização, além do mercado e do estado: a produção social, que inclui o trabalho intelectual compartilhado (enfocado em [WoN]) e o compartilhamento de bens rivais, tema de `Sharing Nicely`. De fato, existe um vasto acervo de livros circulando pela humanidade sem a influência do estado ou do mercado. É o rossio dos livros (`book commons`__ foi o termo que usei na minha aplicação para o Google Summer of Code aprovada em 2006).
+
+__ http://code.google.com/soc/2006/horde/appinfo.html?csaid=D26A255891C1C455
+
+O rossio dos livros é formado por exemplares emprestados, esquecidos, abandonados, ou que foram emprestados e nunca devolvidos, e talvez depois sejam passados para frente. Ainda não consegui encontrar estudos ou estimativas sobre o tamanho deste acervo, mas Benkler reconhece que emprestar livros é uma prática disseminada, o que leva a crer que este deve ser um acervo significativo:
+
+    This overcapacity {of the book} is the source of the secondhand book market (market provisioning), the public library (state provisioning), and the widespread practice of lending books to friends (social provisioning)
+    
+O compartilhamento de livros não é um tema aprofundado por Benkler em `Sharing Nicely`. A única outra menção sobre livros relevante para a nossa discussão é a que segue:
+
+    Bestowing a benefit on loved ones is probably the most common benefit for social selectivity, as we prefer our family and friends to strangers when we decide to whom we will lend our car or book. {`Sharing Nicely`, III.A. Transaction Costs - 2. The General Shape of Transaction-Costs-Based Choice Among Frameworks, p. 313}
+
+O contexto da citação é a análise de custos de transação e benefícios que orientam a escolha dos agentes entre diferentes modalidades de inclusão ou exclusão ao administrar o uso de seus bens. Voltaremos a esta análise posteriormente.
+    
+O empréstimo de livros entre parentes, amigos e colegas é uma prática informal que não deixa registros, e não temos notícias de estatísticas a respeito dela. Mas nossa vivência social, assim como a de Benkler, permite supor que seja uma prática disseminada. Nossa hipótese é que e o uso da Internet poderia dar mais visibilidade e eficiência ao compartilhamento de livros, assim como viabilizou o software livre e a Wikipedia.
+
+
+----------------------------------------
+Compartilhamento de livros via internet
+----------------------------------------
+
+    
+BookCrossing
+--------------
+
+A primeira aplicação em larga escala da tecnologia da Internet para incrementar o rossio dos livros foi o `BookCrossing (http://bookcrossing.com/)`__. Criado por Ron Hornbaker em 2001, o site estimula as pessoas a registrarem exemplares em seu banco de dados, e depois abandoná-los em locais públicos, juntamente com notas explicando que o livro foi deixado de propósito, para poder circular, e estimulando quem o encontrar a usá-lo e depois fazer o mesmo.
+
+__ http://bookcrossing.com/
+
+A idéia de Hornbaker tem um forte apelo social, e tornou-se um grande sucesso. Segundo números do próprio site, em 20/10/2008 há 718.082 usuários cadastrados e 5.165.093 de livros registrados. 
+
+Apesar do seu inegável lirismo, a prática de abandonar livros não é muito eficiente como mecanismo para aproveitar sua capacidade ociosa. Não encontrei dados oficiais, mas uma pesquisa pelo termo "catch rate" no site BookCrossing.com revela que este índice está na faixa entre 10% e 20% segundo relatos de vários usuários. Ou seja, entre 80% e 90% dos exemplares abandonados nunca mais são registrados novamente no BookCrossing. Isso não quer dizer que todos eles deixaram de circular, mas certamente aqueles que ainda estiverem circulando não estão mais no âmbito do projeto, e possivelmente a maioria foi para reciclagem ou, na melhor das hipóteses, voltou a acumular poeira em alguma estante.
+
+Sites de bibliotecas pessoas
+------------------------------------
+
+Nos últimos anos vários sites foram criados para permitir que indivíduos gerenciem seus acervos bibliográficos pessoais e exibam seus catálogos na Web. Alguns exemplos são `Library Thing`__, `LovelyBooks`__ e `Shelfari`__. O primeiro tem 519.098 membros e 32.387.807 exemplares catalogados. Os outros dois não publicam estatísticas, mas o Shelfari foi adquirido pela Amazon.com em agosto de 2008, 22 meses após o seu lançamento. Todos estes sites são redes sociais para bibliófilos. A ênfase está em encontrar recomendações de livros e pessoas com gostos semelhantes. Nenhum deles enfatiza ou sequer suporta adequadamente o empréstimo de livros. Os dois últimos pertencem a empresas do mercado livreiro (um grupo editorial alemão e uma loja online americana), e o Library Thing cobra para hospedar catálogos individuais com mais de 200 títulos.
+
+__ http://www.librarything.com/
+__ http://www.shelfari.com/
+__ http://www.lovelybooks.de/
+
+O que se observa hoje é que tipicamente os grandes sites voltados para bibliófilos não se preocupam em facilitar o compartilhamento dos exemplares em si, mas sim opiniões sobre as obras. 
+
+Sites de permuta de livros
+----------------------------
+
+Mais recentemente têm surgido sites para permuta de livros (`book swapping` parece ser o termo mais usual em inglês). 
+
+O wiki da P2P Foundation tem uma lista de sites assim:
+
+http://www.p2pfoundation.net/Book_Swapping
+
+Será que a permuta é maneira mais eficiente de fazer as obras circularem? Eu acredito que não, mas não tenho base científica para fazer esta afirmação. Minha intuição diz que muitas pessoas têm apego por boa parte do seu acervo, principalmente pela melhor parte, e não estaria disposta a trocar mas estaria disposta a emprestar seus livros mais apreciados caso isso pudesse ser feito com segurança.
+
+
+----------------
+Circulante.org
+----------------
+
+Aqui será apresentada a proposta do sistema
+
+Funcionalidade
+------------------
+
+Principais recursos oferecidos pelo Circulante.org
+
+Análise comparativa 
+--------------------
+
+Comparação com outros sistemas de gestão de pequenas bibliotecas
+
+
+Vantagens para quem empresta
+------------------------------
+
+Idem.
+
+Vantagens para quem toma emprestado
+--------------------------------------
+
+Ibidem.
+
+Aplicabilidade em comunidades fechadas
+----------------------------------------
+
+O software por trás do site, chamado Wanbooks, poderá ser baixado e usado em escolas, empresas e outros ambientes onde seja desejável maior controle sobre o catálogo coletivo e a comunidade de usuários.
+
+
+-------------------------------------------------
+Impacto sobre a motivação e custos de transação
+-------------------------------------------------
+
+Aqui será discutido como as funcionalidades do Circulante.org podem ajudar a na motivação dos agentes e na redução de custos de transação para estimular o compartilhamento de livros. A análise é pautada pelo o conteúdo que correponde da parte III. SHARING AND MARKETS: TRANSACTION COSTS AND MOTIVATIONS.
+
+
+Bibliofilia
+--------------
+
+Sobre o apego aos livros, e como o empréstimo controlado é a melhor forma de colocar que os acervos pessoais em circulação.
+
+Custos de transação
+---------------------
+
+Como um catálogo unificado online, reunindo os acervos de todo um grupo de pessoas próximas pode reduzir o custo de obter um livro que se deseja.
+
+Como o controle de reputações pode reduzir o risco de emprestar.
+
+Como a circulação do acervo pode reduzir o custo de armazenagem justamente daquele que têm o maior acervo.
+
+
+------------
+Conclusão
+------------
+
+    Social production of goods and services, both public and private, is pervasive, though unnoticed. It sometimes substitutes for, and sometimes complements, market and state production everywhere. It is, to be fanciful, the dark matter of our economic production universe. {`Sharing Nicely`, p. 337}
+    
+O projeto Circulante.org visa colocar esta matéria escura a serviço da Primeira Lei de Ranganathan.
+
