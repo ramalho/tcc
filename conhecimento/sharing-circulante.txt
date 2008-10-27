@@ -44,7 +44,7 @@ Entre os parênteses de Simon e Vieira está o ponto de partida deste trabalho. 
     Books (rather than their content) are an excellent example {of shareable goods}. In order to read a book one can borrow it from a library or buy it. Once purchased, the book has much more capacity to deliver its primary functionality — communicating its content—than a single nonobsessive individual can consume. {`Sharing Nicely`, III.D. Shareable Goods: Conclusion p. 305}
 
 O rossio dos livros
----------------------
+=====================
 
 Benkler estuda uma terceira forma de organização, além do mercado e do estado: a produção social, que inclui o trabalho intelectual compartilhado (enfocado em [WoN]) e o compartilhamento de bens rivais, tema de `Sharing Nicely`. De fato, existe um vasto acervo de livros circulando pela humanidade sem a influência do estado ou do mercado. É o rossio dos livros (`book commons`__ foi o termo que usei na minha aplicação para o Google Summer of Code aprovada em 2006).
 
@@ -69,7 +69,7 @@ Compartilhamento de livros via internet
 
     
 BookCrossing
---------------
+===============
 
 A primeira aplicação em larga escala da tecnologia da Internet para incrementar o rossio dos livros foi o `BookCrossing (http://bookcrossing.com/)`__. Criado por Ron Hornbaker em 2001, o site estimula as pessoas a registrarem exemplares em seu banco de dados, e depois abandoná-los em locais públicos, juntamente com notas explicando que o livro foi deixado de propósito, para poder circular, e estimulando quem o encontrar a usá-lo e depois fazer o mesmo.
 
@@ -80,7 +80,7 @@ A idéia de Hornbaker tem um forte apelo social, e tornou-se um grande sucesso. 
 Apesar do seu inegável lirismo, a prática de abandonar livros não é muito eficiente como mecanismo para aproveitar sua capacidade ociosa. Não encontrei dados oficiais, mas uma pesquisa pelo termo "catch rate" no site BookCrossing.com revela que este índice está na faixa entre 10% e 20% segundo relatos de vários usuários. Ou seja, entre 80% e 90% dos exemplares abandonados nunca mais são registrados novamente no BookCrossing. Isso não quer dizer que todos eles deixaram de circular, mas certamente aqueles que ainda estiverem circulando não estão mais no âmbito do projeto, e possivelmente a maioria foi para reciclagem ou, na melhor das hipóteses, voltou a acumular poeira em alguma estante.
 
 Sites de bibliotecas pessoas
-------------------------------------
+===============================
 
 Nos últimos anos vários sites foram criados para permitir que indivíduos gerenciem seus acervos bibliográficos pessoais e exibam seus catálogos na Web. Alguns exemplos são `Library Thing`__, `LovelyBooks`__ e `Shelfari`__. O primeiro tem 519.098 membros e 32.387.807 exemplares catalogados. Os outros dois não publicam estatísticas, mas o Shelfari foi adquirido pela Amazon.com em agosto de 2008, 22 meses após o seu lançamento. Todos estes sites são redes sociais para bibliófilos. A ênfase está em encontrar recomendações de livros e pessoas com gostos semelhantes. Nenhum deles enfatiza ou sequer suporta adequadamente o empréstimo de livros. Os dois últimos pertencem a empresas do mercado livreiro (um grupo editorial alemão e uma loja online americana), e o Library Thing cobra para hospedar catálogos individuais com mais de 200 títulos.
 
@@ -91,7 +91,7 @@ __ http://www.lovelybooks.de/
 O que se observa hoje é que tipicamente os grandes sites voltados para bibliófilos não se preocupam em facilitar o compartilhamento dos exemplares em si, mas sim opiniões sobre as obras. 
 
 Sites de permuta de livros
-----------------------------
+============================
 
 Mais recentemente têm surgido sites para permuta de livros (`book swapping` parece ser o termo mais usual em inglês). 
 
@@ -109,28 +109,47 @@ Circulante.org
 Aqui será apresentada a proposta do sistema
 
 Funcionalidade
-------------------
+================
 
-Principais recursos oferecidos pelo Circulante.org
+
+Catálogo
+------------
+
+- Os registros do catálogo correspondem a:
+    - exemplares
+    - edições
+    - obras
+    
+Exemplares correspondem ao conceito de "item" no FRBR, ou seja, um exemplar físico de um livro. Os exemplares são os objetos controlados pelo sistema de empréstimo. Edições equivalem ao conceito de "manifestation" no FRBR. O ISBN identifica uma edição, mas nem todas as edições têm ISBN. Os conceitos de "expression" e "work" do FRBR optamos por fundir em um modelo: obra.
+
+
+
+Catalogação automática
+--------------------------
+
+- Dado o ISBN de um livro, o sistema busca automaticamente na Internet os metadados da edição, incluindo a imagem da capa
+
+- Dado o título e/ou o autor, o sistema busca metadados de várias edições e permite que o usuário escolha uma delas. Caso o usuário tenha uma edição diferente de uma das obras listadas, o sistema permite a catalogação
+
 
 Análise comparativa 
---------------------
+======================
 
 Comparação com outros sistemas de gestão de pequenas bibliotecas
 
 
 Vantagens para quem empresta
-------------------------------
+===============================
 
 Idem.
 
 Vantagens para quem toma emprestado
---------------------------------------
+======================================
 
 Ibidem.
 
 Aplicabilidade em comunidades fechadas
-----------------------------------------
+=========================================
 
 O software por trás do site, chamado Wanbooks, poderá ser baixado e usado em escolas, empresas e outros ambientes onde seja desejável maior controle sobre o catálogo coletivo e a comunidade de usuários.
 
@@ -143,12 +162,12 @@ Aqui será discutido como as funcionalidades do Circulante.org podem ajudar a na
 
 
 Bibliofilia
---------------
+==============
 
 Sobre o apego aos livros, e como o empréstimo controlado é a melhor forma de colocar que os acervos pessoais em circulação.
 
 Custos de transação
----------------------
+======================
 
 Como um catálogo unificado online, reunindo os acervos de todo um grupo de pessoas próximas pode reduzir o custo de obter um livro que se deseja.
 
